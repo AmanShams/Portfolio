@@ -1,13 +1,16 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import ContactFormModal from "@/components/contact-form-modal";
 import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({ subsets: ["latin"] });
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-hanken",
+});
 
 export const metadata: Metadata = {
   title: "Aman-Shams | Portfolio",
@@ -59,7 +62,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("font-sans antialiased relative", inter.className)}>
+      <body
+        className={cn(
+          "font-sans antialiased relative min-h-screen",
+          hankenGrotesk.variable,
+          hankenGrotesk.className
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

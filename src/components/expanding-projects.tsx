@@ -9,7 +9,7 @@ import { Github, ExternalLink } from "lucide-react";
 const projects = [
     {
         type: 'Full Stack',
-        title: 'Institute Management (Multi Tenant)',
+        title: 'Multi Tenant Institute Management',
         organization: 'Multi Tenant System',
         image: '/ilemes.png',
         tech: 'React + Node + PostgreSQL',
@@ -100,8 +100,8 @@ const ProjectGridItem = ({ project }: { project: typeof projects[0] }) => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
             {/* Bottom Card - visible on hover/expand */}
-            <div className="absolute bottom-4 left-4 right-4 translate-y-[120%] group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                <div className="bg-background/50 backdrop-blur-2xl border border-border/30 rounded-lg p-4 shadow-lg flex flex-col gap-3">
+            <div className="absolute w-1/2 bottom-4 left-4 right-4 translate-y-[120%] group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                <div className="bg-background/80 backdrop-blur-2xl border border-border/10 rounded-lg p-4 shadow-lg flex flex-col gap-3">
 
                     {/* Header: Type & Title */}
                     <div>
@@ -113,16 +113,16 @@ const ProjectGridItem = ({ project }: { project: typeof projects[0] }) => {
                                 {project.tech}
                             </span>
                         </div>
-                        <h3 className="text-lg font-bold text-foreground leading-tight">
+                        <h3 className="text-base font-bold text-foreground leading-tight">
                             {project.title}
                         </h3>
-                        <p className="text-xs text-muted-background mt-0.5">{project.organization}</p>
+                        {/* <p className="text-xs text-muted-background mt-0.5">{project.organization}</p> */}
                     </div>
 
                     {/* Description - Compact */}
-                    <p className="text-xs text-foreground/50 line-clamp-2 leading-relaxed">
+                    {/* <p className="text-xs text-foreground/50 line-clamp-2 leading-relaxed">
                         {project.description}
-                    </p>
+                    </p> */}
 
                     {/* Buttons */}
                     <div className="flex gap-2 pt-1">

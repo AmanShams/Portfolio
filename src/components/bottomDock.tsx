@@ -108,9 +108,22 @@ export function DockDemo() {
   };
 
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 w-full max-w-6xl px-4 sm:px-6 z-50">
+    <div className={cn(
+      "fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-in-out",
+      scrolled
+        ? "top-0 w-full max-w-6xl px-2"
+        : "top-6 w-full max-w-6xl px-4 sm:px-6"
+    )}>
       <TooltipProvider>
-        <Dock direction="middle" className="w-full justify-start">
+        <Dock
+          direction="middle"
+          className={cn(
+            "w-full justify-start transition-all duration-300 ease-in-out",
+            scrolled
+              ? "rounded-none mt-0 dark:border-neutral-700/50 bg-background/50 backdrop-blur-sm px-4 py-8"
+              : "rounded-full m-2"
+          )}
+        >
           {DATA.navbar
             .filter((item) => item.label === "Home")
             .map((item) => (

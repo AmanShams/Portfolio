@@ -13,6 +13,10 @@ export default {
         center: true,
         padding: "2rem",
       },
+      fontFamily: {
+        sans: ["var(--font-hanken)", "sans-serif"],
+        hanken: ["var(--font-hanken)", "sans-serif"],
+      },
 
       colors: {
         background: "hsl(var(--background))",

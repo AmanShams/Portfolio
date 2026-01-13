@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { allBlogs } from "content-collections";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import TechStack from "./_components/tech-stack";
@@ -38,9 +38,9 @@ export default function Page() {
             Selected Projects
           </h2>
           <Link href="/projects" aria-label="See all projects">
-            <Button variant="outline" size="sm">
+            <Button variant={"link"} size="sm" className="tracking-wide">
               All Projects
-              <ExternalLink className="size-4 ml-1" />
+              <ArrowUpRight className="size-4 ml-1" />
             </Button>
           </Link>
         </div>
@@ -76,9 +76,9 @@ export default function Page() {
         <div className="flex justify-between mb-6 flex-wrap gap-3">
           <h2 className="text-xl font-bold tracking-tight">Recent Blog</h2>
           <Link href="/blog" aria-label="See all blogs">
-            <Button variant="outline" size="sm">
+            <Button variant="link" size="sm" className="tracking-wide">
               All Blogs
-              <ExternalLink className="size-4 ml-1" />
+              <ArrowUpRight className="size-4 ml-1" />
             </Button>
           </Link>
         </div>
