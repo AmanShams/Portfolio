@@ -1,8 +1,12 @@
 import { Mail } from "lucide-react";
 
+import CornerPlus from "./ui/corner-plus";
+
 export default function GetInTouchSection() {
   return (
-    <section className="max-w-6xl mx-auto px-20 sm:px-6 py-8">
+    <section className="relative max-w-6xl mx-auto px-4 sm:px-6 py-8 border-b border-x-0 border-border/50 bg-background/50 ">
+      <CornerPlus className="-bottom-2 -left-2" />
+      <CornerPlus className="-bottom-2 -right-2" />
       <div className="flex justify-between mb-6 flex-wrap gap-3">
         <h2 className="text-2xl font-bold tracking-tight">Get In Touch</h2>
       </div>

@@ -88,8 +88,6 @@ export const ExpandingGrids = ({
             gridTemplateColumns: cols.join(' '),
             gridTemplateRows: rowsArr.join(' '),
             transition: `grid-template-columns ${duration}ms ease, grid-template-rows ${duration}ms ease`,
-            // DECISION: A fixed height prevents the grid from resizing its parent
-            // container, ensuring the expansion effect is contained.
             height: '100%',
         };
     }, [hoveredCell, columns, rows, gap, duration, style, expandRatio]);
@@ -128,8 +126,6 @@ export const ExpandingGrids = ({
         [hoveredCell, rows, columns]
     );
 
-    // When the hovered cell changes via keyboard, programmatically move focus
-    // to the corresponding DOM element for accessibility and a seamless UX.
     useEffect(() => {
         if (hoveredCell) {
             const index = hoveredCell.row * columns + hoveredCell.col;
@@ -165,9 +161,6 @@ export const ExpandingGrids = ({
                             index,
                             index + columns
                         );
-                        // WHY: We manually wrap children in a div with role='row' for
-                        // accessibility. `display: 'contents'` makes the wrapper element
-                        // "disappear" from the layout, so it doesn't break the CSS grid.
                         return (
                             <div role='row' style={{ display: 'contents' }}>
                                 {rowChildren}

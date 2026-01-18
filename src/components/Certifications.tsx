@@ -10,11 +10,59 @@ const Certifications = () => {
       verifyUrl:
         "https://www.freecodecamp.org/certification/fcc187d5db9-784d-4f43-a312-b441861c2f7d/front-end-development-libraries",
     },
+    {
+      id: 1,
+      title: "Frontend Development Libraries",
+      issuer: "freeCodeCamp",
+      verifyUrl:
+        "https://www.freecodecamp.org/certification/fcc187d5db9-784d-4f43-a312-b441861c2f7d/front-end-development-libraries",
+    },
+    {
+      id: 1,
+      title: "Frontend Development Libraries",
+      issuer: "freeCodeCamp",
+      verifyUrl:
+        "https://www.freecodecamp.org/certification/fcc187d5db9-784d-4f43-a312-b441861c2f7d/front-end-development-libraries",
+    },
+    {
+      id: 1,
+      title: "Frontend Development Libraries",
+      issuer: "freeCodeCamp",
+      verifyUrl:
+        "https://www.freecodecamp.org/certification/fcc187d5db9-784d-4f43-a312-b441861c2f7d/front-end-development-libraries",
+    },
+    {
+      id: 1,
+      title: "Frontend Development Libraries",
+      issuer: "freeCodeCamp",
+      verifyUrl:
+        "https://www.freecodecamp.org/certification/fcc187d5db9-784d-4f43-a312-b441861c2f7d/front-end-development-libraries",
+    },
+    {
+      id: 1,
+      title: "Frontend Development Libraries",
+      issuer: "freeCodeCamp",
+      verifyUrl:
+        "https://www.freecodecamp.org/certification/fcc187d5db9-784d-4f43-a312-b441861c2f7d/front-end-development-libraries",
+    },
+    {
+      id: 1,
+      title: "Frontend Development Libraries",
+      issuer: "freeCodeCamp",
+      verifyUrl:
+        "https://www.freecodecamp.org/certification/fcc187d5db9-784d-4f43-a312-b441861c2f7d/front-end-development-libraries",
+    },
+    {
+      id: 1,
+      title: "Frontend Development Libraries",
+      issuer: "freeCodeCamp",
+      verifyUrl:
+        "https://www.freecodecamp.org/certification/fcc187d5db9-784d-4f43-a312-b441861c2f7d/front-end-development-libraries",
+    },
   ];
 
   return (
     <div>
-      <h2 className="text-xl font-bold tracking-tight mb-6">Certifications</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {certifications.map((cert) => (
           <article

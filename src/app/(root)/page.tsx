@@ -1,16 +1,21 @@
 import Link from "next/link";
 import { allBlogs } from "content-collections";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import TechStack from "./_components/tech-stack";
 import BlogCard from "../blog/_components/blog-card";
-import { DockDemo } from "@/components/bottomDock";
 import HeaderSection from "@/components/HeaderSection";
 import GetInTouchSection from "@/components/getInTouch";
 import Certifications from "@/components/Certifications";
 import ExpandingProjects from "@/components/expanding-projects";
 import ProfessionalExperience from "@/components/professional-experience";
+import Services from "./_components/services";
+import Section from "@/components/ui/section";
+import SectionHeader from "@/components/ui/section-header";
+import SectionContent from "@/components/ui/section-content";
+import CornerPlus from "@/components/ui/corner-plus";
+import PageLayout from "@/components/ui/page-layout";
 
 export default function Page() {
   const latestBlog = allBlogs
@@ -21,79 +26,91 @@ export default function Page() {
     .slice(0, 3);
 
   return (
-    <main className="relative tracking-tight mx-auto pt-14 max-w-7xl bg-gradient-to-b">
-      <DockDemo />
+    <PageLayout>
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-12 border-0 space-y-12">
+        <CornerPlus className="-bottom-2 -left-2" />
+        <CornerPlus className="-bottom-2 -right-2" />
 
-      {/* Hero / Header Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8 border-b border-neutral-200/50 dark:border-neutral-700/50 space-y-8">
         <div className="max-w-5xl">
           <HeaderSection />
         </div>
+        <div className="flex gap-4">
+          <Button variant={"outline"} size="sm" className="tracking-wide text-base">
+            Download Resume
+            <Download className="size-4 ml-1" />
+          </Button>
+          <Button variant={"default"} size="sm" className="tracking-wide text-base">
+            Cantact Me
+            <ArrowUpRight className="size-4 ml-1" />
+          </Button>
+        </div>
       </section>
 
-      {/* Latest Projects */}
-      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 py-6 border-b border-neutral-200/50 dark:border-neutral-700/50">
-        <div className="flex justify-between mb-1 flex-wrap gap-3">
-          <h2 className="text-xl font-bold tracking-tight">
-            Selected Projects
-          </h2>
+      <Section variant="bordered-y">
+        <SectionHeader title="Expertise" />
+        <SectionContent>
+          <Services />
+        </SectionContent>
+      </Section>
+
+      <Section variant="bordered-b">
+        <SectionHeader title="Selected Projects">
           <Link href="/projects" aria-label="See all projects">
-            <Button variant={"link"} size="sm" className="tracking-wide">
+            <Button variant={"link"} size="sm" className="tracking-wide text-base">
               All Projects
               <ArrowUpRight className="size-4 ml-1" />
             </Button>
           </Link>
-        </div>
-        <ExpandingProjects />
-      </section>
+        </SectionHeader>
+        <SectionContent>
+          <ExpandingProjects />
+        </SectionContent>
+      </Section>
 
-      {/* Experience Section */}
-      <section
-        id="professional-experience"
-        className="relative max-w-6xl mx-auto px-4 sm:px-6 py-8 border-b border-neutral-200/50 dark:border-neutral-700/50"
-      >
-        <ProfessionalExperience />
-      </section>
+      <Section id="professional-experience" variant="bordered-b">
+        <SectionHeader title="Professional Experience" />
+        <SectionContent>
+          <ProfessionalExperience />
+        </SectionContent>
+      </Section>
 
-      {/* Certifications Section */}
-      <section
-        id="certifications"
-        className="relative max-w-6xl mx-auto px-4 sm:px-6 py-8 border-b border-neutral-200/50 dark:border-neutral-700/50"
-      >
-        <Certifications />
-      </section>
+      <Section variant="bordered-b">
+        <SectionHeader title="Technology Stack" />
+        <SectionContent>
+          <TechStack />
+        </SectionContent>
+      </Section>
 
-      {/* Tech Stack */}
-      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 py-6 border-b border-neutral-200/50 dark:border-neutral-700/50">
-        <h2 className="text-xl font-bold tracking-tight mb-6">
-          Technology Stack
-        </h2>
-        <TechStack />
-      </section>
+      <Section id="certifications" variant="bordered-b">
+        <SectionHeader title="Certifications" />
+        <SectionContent>
+          <Certifications />
+        </SectionContent>
+      </Section>
 
-      {/* Recent Blog */}
-      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 py-8 border-b border-neutral-200/50 dark:border-neutral-700/50">
-        <div className="flex justify-between mb-6 flex-wrap gap-3">
-          <h2 className="text-xl font-bold tracking-tight">Recent Blog</h2>
+      <Section variant="bordered-b">
+        <SectionHeader title="Recent Blog">
           <Link href="/blog" aria-label="See all blogs">
-            <Button variant="link" size="sm" className="tracking-wide">
+            <Button variant="link" size="sm" className="tracking-wide text-base">
               All Blogs
               <ArrowUpRight className="size-4 ml-1" />
             </Button>
           </Link>
-        </div>
-        <div className="flex gap-4 flex-wrap">
-          {latestBlog.map((blog) => (
-            <div key={blog.slug} className="w-full sm:w-[48%] lg:w-[32%]">
-              <BlogCard {...blog} />
-            </div>
-          ))}
-        </div>
-      </section>
+        </SectionHeader>
+        <SectionContent>
+          <div className="flex gap-4 flex-wrap">
+            {latestBlog.map((blog) => (
+              <div key={blog.slug} className="w-full sm:w-[48%] lg:w-[32%]">
+                <BlogCard {...blog} />
+              </div>
+            ))}
+          </div>
+        </SectionContent>
+      </Section>
 
       <section>
         <GetInTouchSection />
       </section>
-    </main>
+    </PageLayout>
   );
 }

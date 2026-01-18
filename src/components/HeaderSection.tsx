@@ -5,10 +5,10 @@ export default function HeaderSection() {
         <div className="flex flex-col gap-2">
           <div className="space-y-2 w-full">
             <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold tracking-tighter">
-              <span className=" text-2xl sm:text-5xl md:text-3xl font-light tracking-wide">
+              <span className=" text-base sm:text-xl tracking-wide text-muted-foreground leading-relaxed">
                 Hi I&apos;m{" "}
               </span>
-              Amanullah Shams
+              Amanullah Shams <span className="text-primary/50 tracking-tighter"> a Full Stack web developer.</span>
             </h1>
           </div>
 

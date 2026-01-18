@@ -27,7 +27,7 @@ const animationProps: MotionProps = {
 
 interface ShinyButtonProps
   extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>,
-    MotionProps {
+  MotionProps {
   children: React.ReactNode;
   className?: string;
 }

@@ -3,9 +3,10 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Footer";
 import ContactFormModal from "@/components/contact-form-modal";
 import { Toaster } from "@/components/ui/toaster";
+import { Navbar } from "./(root)/_components/navbar";
+import { Footer } from "./(root)/_components/footer";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -64,7 +65,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "font-sans antialiased relative min-h-screen",
+          "font-sans antialiased relative min-h-screen bg-[#f9f9f9] dark:bg-[#292929]",
           hankenGrotesk.variable,
           hankenGrotesk.className
         )}
@@ -75,6 +76,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children} {/* Main Page Content */}
           <Footer />
           <ContactFormModal />

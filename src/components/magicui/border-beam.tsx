@@ -11,7 +11,7 @@ interface BorderBeamProps {
   /**
    * The duration of the border beam.
    */
-duration?: number;
+  duration?: number;
   /**
    * The delay of the border beam.
    */
